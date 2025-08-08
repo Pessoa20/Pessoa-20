@@ -53,5 +53,18 @@
     draw();
     document.getElementById('refresh').onclick=draw;
   </script>
+  
+<script>
+const API_KEY = "F4MMOH0WX9JS20ZI";
+
+async function buscarDadosAcao(simbolo) {
+  const url = https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${simbolo}&apikey=${API_KEY};
+  const resposta = await fetch(url);
+  const dados = await resposta.json();
+  console.log(dados);
+}
+
+buscarDadosAcao("TSLA"); // Exemplo com Tesla
+</script>
 </body>
 </html>
